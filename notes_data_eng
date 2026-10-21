@@ -1,0 +1,24 @@
+This allows to show the senders:  xzcat gmane.linux.kernel\(3\)\(1\).xz | grep -a -i '^From:'
+
+Basice sorting: cat file | sort 
+Sorting numerically: cat file | sort -n
+Sorting a specific key: cat file | sort -k 2 (Why do we need 2?)
+with specific separator: cat file | sort -t 't' -k 3
+elminating duplicates: cat file | sort -u
+
+
+My solution
+xzcat gmane.linux.kernel\(3\)\(1\).xz | grep -a -i '^From:' | sort
+
+xzcat gmane.linux.kernel\(3\)\(1\).xz | grep -a -i '^From:' | sort | uniq -c | sort -n | tail -10
+
+xzcat gmane.linux.kernel\(3\)\(1\).xz | grep -a -i '^From:' | sort | uniq -u
+
+
+
+Proposed solution
+xzcat gmane.linux.kernel\(3\)\(1\).xz | grep -a -i '^From:' | grep -a -i -o -E '[a-z0-9]+@[a-z0-9]+\.[a-z]{2,}' | sort
+
+xzcat gmane.linux.kernel\(3\)\(1\).xz | grep -a -i '^From:' | grep -a -i -o -E '[a-z0-9]+@[a-z0-9]+\.[a-z]{2,}' | sort | uniq -c | sort -n -k 1 | tail -n -10
+
+xzcat gmane.linux.kernel\(3\)\(1\).xz | grep -a -i '^From:' | grep -a -i -o -E '[a-z0-9]+@[a-z0-9]+\.[a-z]{2,}' | sort | uniq -u

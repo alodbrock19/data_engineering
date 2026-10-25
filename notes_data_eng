@@ -22,3 +22,16 @@ xzcat gmane.linux.kernel\(3\)\(1\).xz | grep -a -i '^From:' | grep -a -i -o -E '
 xzcat gmane.linux.kernel\(3\)\(1\).xz | grep -a -i '^From:' | grep -a -i -o -E '[a-z0-9]+@[a-z0-9]+\.[a-z]{2,}' | sort | uniq -c | sort -n -k 1 | tail -n -10
 
 xzcat gmane.linux.kernel\(3\)\(1\).xz | grep -a -i '^From:' | grep -a -i -o -E '[a-z0-9]+@[a-z0-9]+\.[a-z]{2,}' | sort | uniq -u
+
+
+
+xzcat lkml.xz | grep -a -i '^From:' | wc -l
+
+
+
+\(<expression we want to match>)
+
+xzcat lkml.xz | sed '/[[:space:]]/\n/g' | grep -o -E '[A-Za-z]+' | sort | uniq -c | sort -n | tail
+
+xzcat lkml.xz | grep '^Lines:' | awk 'BEGIN {c=0;l=0} {c++;l+=$2}
+

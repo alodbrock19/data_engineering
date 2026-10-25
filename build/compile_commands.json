@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/aldo/U/data_engineering/build",
+  "command": "/usr/bin/g++  -I/home/aldo/U/data_engineering/material01/material/include -g -std=gnu++17 -o CMakeFiles/tinydb.dir/src/main.cpp.o -c /home/aldo/U/data_engineering/material01/material/src/main.cpp",
+  "file": "/home/aldo/U/data_engineering/material01/material/src/main.cpp",
+  "output": "CMakeFiles/tinydb.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/aldo/U/data_engineering/build",
+  "command": "/usr/bin/g++  -I/home/aldo/U/data_engineering/material01/material/include -g -std=gnu++17 -o CMakeFiles/tinydb.dir/src/table.cpp.o -c /home/aldo/U/data_engineering/material01/material/src/table.cpp",
+  "file": "/home/aldo/U/data_engineering/material01/material/src/table.cpp",
+  "output": "CMakeFiles/tinydb.dir/src/table.cpp.o"
+}
+]

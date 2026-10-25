@@ -1,0 +1,3 @@
+/home/alrodriguezg/U/data_engineering/material01/material/build/CMakeFiles/tinydb.dir
+/home/alrodriguezg/U/data_engineering/material01/material/build/CMakeFiles/edit_cache.dir
+/home/alrodriguezg/U/data_engineering/material01/material/build/CMakeFiles/rebuild_cache.dir

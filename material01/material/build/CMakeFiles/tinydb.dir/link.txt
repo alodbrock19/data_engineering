@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/tinydb.dir/src/main.cpp.o CMakeFiles/tinydb.dir/src/table.cpp.o -o tinydb

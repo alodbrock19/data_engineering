@@ -16,13 +16,14 @@ void exercise3(const Table& table) {
                   << r.l_discount << " | " << r.l_returnflag << '\n';
     }
 
-    // TODO 3.5: print sizeof(LineItem) and the sum of the sizes of its fields
+    std::cout << "sizeof(LineItem): " << sizeof(LineItem) << '\n';
+    std::cout << "sizeof(LineItem2): " << sizeof(LineItem2) << '\n';
+    std::cout << "sum of value type memory: " << sizeof(int)+2*sizeof(double)+sizeof(char) << '\n';
 }
 
 // TODO 7.1: replace both total_revenue functions with one template
-// TODO 4.1: pass rows as const std::vector<LineItem>&
-double total_revenue(std::vector<LineItem> rows) {
-    // TODO 4.3
+double total_revenue(const std::vector<LineItem>& rows) {
+    //rows[0].l_discount = 0; //This will throw an error because we cannot modify a const reference to a vector of LineItem. The function is declared to take a const reference, which means we cannot change the contents of the vector or its elements.
     double sum = 0.0;
     for (const LineItem& r : rows)
         sum += r.l_extendedprice * (1.0 - r.l_discount);

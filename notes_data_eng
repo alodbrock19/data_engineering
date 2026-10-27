@@ -35,3 +35,47 @@ xzcat lkml.xz | sed '/[[:space:]]/\n/g' | grep -o -E '[A-Za-z]+' | sort | uniq -
 
 xzcat lkml.xz | grep '^Lines:' | awk 'BEGIN {c=0;l=0} {c++;l+=$2}
 
+
+
+What is the principle of locality and how caches leverage it?
+memory close to each other in sequential manner/ leverage spacial locality 
+temporal locality (we repeatedly use it, we keep it closer)
+THere are two side of locality
+        Latency         Bandwidth
+L1      1ns             
+L2      ~3-5ns
+L3      ~10-20ns
+DRAM    ~100ns
+SSD     ~50-100us
+HDD     ~5-10ms
+
+What is the problem of just measuring scalability of a system?
+It might misleading if you start with a poor baseline
+
+analytical proc.: We are interested in a specific task ...
+
+TPC-H standard benchmark
+SF: scale factor 
+
+awk -F '|' 'BEGIN {x=0} {x=x+$5} END {print x}' lineitem
+
+=============================================================================================
+time awk -F '|' 'BEGIN {x=0} {x=x+$5} END {print x}' lineitem.tbl.xz 
+10478.8
+
+real	0m0.178s
+user	0m0.160s
+sys	0m0.018s
+=============================================================================================
+The first is waiting the DISK and the second is CPU-bound
+
+sudo sh -c 'echo 1 >
+
+
+you warm up the machine and afterwards you make statistical measurements
+We should disregard the warm up (beginning)
+There might be a cool down after we plateau (not necessarily happens)
+
+Understand our device and the section that we are interested in 
+ -[ ] Understand the difference with O0-3 optimizations that were described in the slides
+ 

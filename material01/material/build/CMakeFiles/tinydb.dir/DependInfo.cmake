@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/alrodriguezg/U/data_engineering/material01/material/src/main.cpp" "CMakeFiles/tinydb.dir/src/main.cpp.o" "gcc" "CMakeFiles/tinydb.dir/src/main.cpp.o.d"
-  "/home/alrodriguezg/U/data_engineering/material01/material/src/table.cpp" "CMakeFiles/tinydb.dir/src/table.cpp.o" "gcc" "CMakeFiles/tinydb.dir/src/table.cpp.o.d"
+  "/home/aldo/U/data_engineering/material01/material/src/main.cpp" "CMakeFiles/tinydb.dir/src/main.cpp.o" "gcc" "CMakeFiles/tinydb.dir/src/main.cpp.o.d"
+  "/home/aldo/U/data_engineering/material01/material/src/table.cpp" "CMakeFiles/tinydb.dir/src/table.cpp.o" "gcc" "CMakeFiles/tinydb.dir/src/table.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

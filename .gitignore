@@ -13,3 +13,8 @@
 /dataSources.local.xml
 # Zone identifier
 *:Zone.Identifier
+# Build files
+/build/
+build/
+#Big datasets
+tpch/

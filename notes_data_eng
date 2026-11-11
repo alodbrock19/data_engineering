@@ -79,3 +79,55 @@ There might be a cool down after we plateau (not necessarily happens)
 Understand our device and the section that we are interested in 
  -[ ] Understand the difference with O0-3 optimizations that were described in the slides
  
+ 
+ 
+ 
+ 
+ comm [options] file1 file2
+ comand1 && comand2  executes 2 if 1 succedded
+ 
+ 
+ 
+ cat gmane.linux.kernel | grep "^Lines:" | awk 'BEGIN {max=0} $2+0 > max {max=$2+0} END {print max}'
+ cat gmane.linux.kernel | grep "^Lines:" | awk '$2+0 > max {max=$2+0} END {print max}'
+12652
+ 
+ cat gmane.linux.kernel | grep "In-Reply-To: " | awk -F'[<>]' '{print $2}' | sort | uniq -c | sort -nr | head -n 1 | awk '{print $2}'
+ 20161006074448.608056610@linuxfoundation.org
+ 134
+
+ 
+ cat gmane.linux.kernel | grep "^Lines:" | awk '{s+=$2;c++} END {print s/c}'
+ 130.184
+ 
+ 
+ 
+ 
+ Select COUNT (*)
+  FROM professors, lectures
+  WHERE name = 'Sokrates' AND persnr = 
+
+
+
+
+Advanced SQL II
+
+SELECT l_returnflag, l_linestatus,
+AVG(l_quantity) AS avg_quantity
+FROM lineitem
+GROUP BY ROLLUP(l_returnflag,
+l_linestatus)
+
+
+
+WITH RECURSIVE animals (id, name, parent) AS
+	(VALUES(1, 'animal', null),
+		(2, 'mammal', 1), (3, 'giraffe', 2), (4, 'tiger', 2),
+		(5, 'reptile', 1), (6, 'snake', 5), (7, 'turtle', 5),
+		(8, 'green sea turtle', 7)),
+r AS (SELECT * FROM animals WHERE name = 'reptile'
+	UNION ALL
+	SELECT animals.*
+	FROM r, animals
+	WHERE r.id = animals.parent)
+SELECT * FROM r;

@@ -1,3 +1,0 @@
-/home/aldo/U/data_engineering/build/CMakeFiles/tinydb.dir
-/home/aldo/U/data_engineering/build/CMakeFiles/edit_cache.dir
-/home/aldo/U/data_engineering/build/CMakeFiles/rebuild_cache.dir

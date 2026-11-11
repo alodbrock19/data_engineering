@@ -21,20 +21,12 @@ void exercise3(const Table& table) {
     std::cout << "sum of value type memory: " << sizeof(int)+2*sizeof(double)+sizeof(char) << '\n';
 }
 
-// TODO 7.1: replace both total_revenue functions with one template
-double total_revenue(const std::vector<LineItem>& rows) {
-    //rows[0].l_discount = 0; //This will throw an error because we cannot modify a const reference to a vector of LineItem. The function is declared to take a const reference, which means we cannot change the contents of the vector or its elements.
+template < typename Container >
+double total_revenue ( const Container & rows ) {
     double sum = 0.0;
-    for (const LineItem& r : rows)
+    for ( const LineItem & r : rows )
         sum += r.l_extendedprice * (1.0 - r.l_discount);
-    return sum;
-}
-
-double total_revenue(const std::list<LineItem>& rows) {
-    double sum = 0.0;
-    for (const LineItem& r : rows)
-        sum += r.l_extendedprice * (1.0 - r.l_discount);
-    return sum;
+    return sum ;
 }
 
 void exercise4(const Table& table) {
